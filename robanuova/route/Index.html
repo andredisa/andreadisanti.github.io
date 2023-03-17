@@ -1,0 +1,91 @@
+<html>
+
+<head>
+    <title> Form </title>
+    <script type="text/javascript" language="javascript">
+        function validaForm() {
+            if (document.registrazione.cognome.value == ""){
+                alert("inserisci cognome");
+                return false;
+            }
+            if (document.registrazione.nome.value == ""){
+                alert("inserisci nome");
+                return false;
+            }
+            if (document.registrazione.matricola.value == ""){
+                alert("inserisci matricola");
+                return false;
+            }
+
+            let tmp=parseInt(document.registrazione.matricola.value);
+            if(isNaN(tmp)){
+                alert("la matricola deve essere un numero");
+                return false;
+            }
+            if(document.registrazione.regione.value=="nessuna"){
+                alert("devi scegliere una regione");
+                return false;
+            }
+            if(document.registrazione.email.value==""){
+                alert("compila il campo email");
+                return false;
+            }
+            if(document.registrazione.tel.value==""){
+                alert("compila il campo telefono");
+                return false;
+            }
+            document.getElementById("feedback").innerHTML="i dati sono corretti";
+            return true;    
+        }
+    </script>
+
+<body>
+    <form name="registrazione" onSubmit="return validaForm();">
+        cognome:
+        <input type="text" name="cognome" size="40" maxlength="40">
+        <br><br>
+
+        nome:
+        <input type="text" name="nome" size="30" maxlength="30">
+        <br><br>
+
+        matricola:
+        <input type="text" name="matricola" size="12" maxlength="12">
+        <br><br>
+
+        regione:
+        <select name="regione">
+            <option value="nessuna" selected></option>
+            <option value="valdaosta">Val d'aosta</option>
+            <option value="piemonte">Piemonte</option>
+            <option value="lombardia">Lombardia</option>
+        </select>
+        <br><br>
+
+        email:
+        <input type="text" name="email" size="12" maxlength="12">
+        <br><br>
+
+        telefono:
+        <input type="text" name="tel" size="15" maxlength="15">
+        <br><br>
+
+        richieste particolari:
+        <br>
+        <textarea name="richieste" cols="60" rows="12"></textarea>
+        <br><br>
+
+        <input type="submit" value="invia">
+        <input type="submit" value="reset">
+        <br><br>
+
+        <p id="feedback"></p>
+
+    </form>
+
+
+</body>
+
+</head>
+
+</html>
