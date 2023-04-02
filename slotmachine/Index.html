@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <title> Home Las Vegas</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type = "text/javascript" src = "SlotMachine.js"></script>
+    <script type = "text/javascript" src = "Utente.js"></script>
+    <script type = "text/javascript">
+        const slotMachine = new SlotMachine();
+        const utente = new Utente();
+
+        function spin() {
+            slotMachine.spin();
+                utente.credito -= 1;
+
+                cambiaImmagine(slotMachine.numero1, 'immagine1');
+                cambiaImmagine(slotMachine.numero2, 'immagine2');
+                cambiaImmagine(slotMachine.numero3, 'immagine3');
+
+                utente.accredita(slotMachine.tipoVincita, slotMachine.numeroVincente);
+
+                document.getElementById('credito').innerHTML = "Credito: " + utente.credito;
+        }
+
+        function cambiaImmagine(valoreEstratto, immagine) {
+            if (valoreEstratto == 0)
+                    document.getElementById(immagine).src = "images/puntodidomanda.jpg"
+            else if (valoreEstratto == 1)
+                document.getElementById(immagine).src = "images/frutta1.jpg"
+            else if (valoreEstratto == 2)
+                document.getElementById(immagine).src = "images/frutta2.jpg"
+            else if (valoreEstratto == 3)
+                document.getElementById(immagine).src = "images/frutta3.jpg"
+            else if (valoreEstratto == 4)
+                document.getElementById(immagine).src = "images/frutta4.jpg"
+            else if (valoreEstratto == 5)
+                document.getElementById(immagine).src = "images/frutta5.jpg"
+            else if (valoreEstratto == 6)
+                document.getElementById(immagine).src = "images/frutta6.jpg"
+            else if (valoreEstratto == 7)
+                document.getElementById(immagine).src = "images/frutta7.jpg"
+            else if (valoreEstratto == 8)
+                document.getElementById(immagine).src = "images/frutta8.jpg"
+            else if (valoreEstratto == 9)
+                document.getElementById(immagine).src = "images/frutta9.jpg"
+        }
+
+        function reset() {
+            slotMachine.reset();
+            utente.credito = 10;
+
+            document.getElementById('immagine1').src = "images/puntodidomanda.jpg"
+            document.getElementById('immagine2').src = "images/puntodidomanda.jpg"
+            document.getElementById('immagine3').src = "images/puntodidomanda.jpg"
+
+            document.getElementById('credito').innerHTML = "Credito: " + utente.credito;
+        }
+    </script>
+
+<body>
+    <table>
+        <tr>
+            <td><img src="images/cooltext432861804221512.png" height="150" width="400"></td>
+            <td><img id="immagine1" src="images/puntodidomanda.jpg" height="80" width="80"></td>
+            <td><img id="immagine2" src="images/puntodidomanda.jpg" height="80" width="80"></td>
+            <td><img id="immagine3" src="images/puntodidomanda.jpg" height="80" width="80"></td>
+        </tr>
+        <tr>
+            <td> <img align="left" src="images/cooltext432865011221530.png" height="25" width="200"></td>
+            <td id = "spin"> <input type = "button" value = "SPIN" onclick = "spin()"> </td>
+            <td id = "reset"> <input type = "button" value = "RESET" onclick = "reset()"> </td>
+        </tr>
+    </table>
+
+    <p id = "credito" >Credito: 10</p>
+</body>
+</head>
+
+</html>
