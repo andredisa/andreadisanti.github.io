@@ -1,0 +1,60 @@
+.display{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 550px;
+	background-color: white;
+	margin: 10px;
+}
+.disp-item{
+    border: 1px solid rgb(0, 0, 0);
+}
+.div{
+	text-align: center;
+}
+#griglia{
+	width: 550px;
+	height: 550px;
+}
+h1{
+	text-align: center;
+	font-family: 'Times New Roman', Times, serif;
+}
+body{
+	text-align: center;
+	background-color:rgba(140, 153, 197, 0.911);
+}
+.cella {
+    border: 1px solid rgb(32, 31, 31);
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: #ccc;
+    cursor: pointer;
+	text-align: center;
+	margin: 1px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+	font-size: 32px;
+	position: relative;
+	vertical-align: middle;
+}
+.cella i {
+	
+	position: absolute;
+	transform: translate(50%,-50%);
+	top: 50%;
+	right: 50%;
+}
+.cella:hover {
+	background-color: #aaa;
+}
+.aperta {
+	background-color: #fff;
+}
+.mina {
+	background-color: rgb(255,0,0);
+	color: #000;
+}
+.bandiera{
+	background-color: yellow;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="script/Cella.js"></script>
+  <script src="script/Campo.js"></script>
+  <script src="script/Script.js"></script>
+</head>
+
+
+<body>
+  <h1>Campo Minato</h1>
+
+  <div align="center">
+    livello:
+    <br><select id="difficoltà">
+      <option value="1" selected>Facile</option>
+      <option value="2">Medio</option>
+      <option value="3">Difficile</option>
+      <option value="4">Dangerous</option>
+    </select>
+
+
+    <br><button onclick="generaCampo()">Genera Campo</button>
+    <br>
+    <div id="numMine" class="disp-item"></div>
+
+    <table align="center">
+      <tr>
+        <td>
+          <div id="griglia"></div>
+        </td>
+      </tr>
+    </table>
+
+    <div class="disp-item"><button id="reset">reset</button></div>
+
+</body>
+
+</html>
