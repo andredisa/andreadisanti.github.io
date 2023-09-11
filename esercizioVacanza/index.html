@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>To-Do List Mensile</title>
+</head>
+<body>
+    
+    <h1> Consumo Di Carne Mensile</h1>
+    <br>
+    <label for="month">Seleziona il Mese: </label>
+    <select id="month">
+        <option value="01">Gennaio</option>
+        <option value="02">Febbraio</option>
+        <option value="03">Marzo</option>
+        <option value="04">Aprile</option>
+        <option value="05">Maggio</option>
+        <option value="06">Giugno</option>
+        <option value="07">Luglio</option>
+        <option value="08">Agosto</option>
+        <option value="09">Settembre</option>
+        <option value="10">Ottobre</option>
+        <option value="11">Novembre</option>
+        <option value="12">Dicembre</option>
+    </select>
+    <br>
+    <label for="day">Seleziona il Giorno: </label>
+    <input type="number" id="day" min="1" max="31">
+    <br>
+    <label for="food">Inserisci la carne mangiata: </label>
+    <input type="text" id="food">
+    <br>
+    <label for="grams">Inserisci il consumo in Grammi: </label>
+    <input type="number" id="grams">
+    <br>
+    <button onclick="aggiungiConsumo()">Aggiungi Consumo</button>
+    <br><br>
+    <h2>Consumo Mensile</h2>
+    <ul id="consumiMensili"></ul>
+    <button onclick="salvaDati()">Salva Dati</button>
+    <br><br>
+    <button onclick="calcolaEmissioniCO2()">Calcola Emissioni CO2</button>
+    <div id="emissioniCO2"></div>
+</body>
+</html>
